@@ -3,10 +3,8 @@ package tasks.task5;
 import java.util.Scanner;
 
 public class QuadraticEquation {
-
-    public static void main(String[] args) {
+    public void calculation() {
         Scanner scanner = new Scanner(System.in);
-
         do {
             System.out.println("Введите коэффициент а: ");
             double a = scanner.nextDouble();
@@ -27,13 +25,11 @@ public class QuadraticEquation {
                 System.out.println("Два корня: " + x1 + " " + x2);
             }
             System.out.println("Хотите выйти? Y/N");
-                if (scanner.nextLine().equalsIgnoreCase("Y")) {
-                    break;
+            if (scanner.nextLine().equalsIgnoreCase("Y")) {  // условие выхода из цикла, без этого условия цикл работает дальше
+                break;
             }
-        }while(!scanner.nextLine().equalsIgnoreCase("Y"));
-
-
-
+        } while (!scanner.nextLine().equalsIgnoreCase("Y")); // если ввод от пользователя  "У" - заверши программу
     }
-
 }
+
+
