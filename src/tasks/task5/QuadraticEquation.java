@@ -2,11 +2,11 @@ package tasks.task5;
 
 public class QuadraticEquation {
     public String noRoots() {
-        return "нет корней";
+        return "Нет корней";
     }
 
     public String oneRoot(double x) {
-        return "Один корень" + x;
+        return "Один корень: " + x;
     }
 
     public String twoRoots(double x1, double x2) {
