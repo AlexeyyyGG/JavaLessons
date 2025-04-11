@@ -1,32 +1,24 @@
 package tasks.task5;
 
 public class QuadraticEquation {
-    public String noRoots() {
-        return "Нет корней";
-    }
 
-    public String oneRoot(double x) {
-        return "Один корень: " + x;
-    }
-
-    public String twoRoots(double x1, double x2) {
-        return "Два корня: " + x1 + " " + x2;
-    }
-
-    public String calculation(double a, double b, double c) {
+    public Result calculation(double a, double b, double c) {
+        Result result = new Result();
         double d = Math.pow(b, 2) - 4.0 * a * c;
 
         if (d < 0) {
-            return noRoots();
+            result.setX1(null);
+            result.setX2(null);
         } else if (d == 0) {
-            double x = -b / (2 * a);
-            return oneRoot(x);
+            double x1 = -b / (2 * a);
+            result.setX1(x1);
+            result.setX2(null);
         } else {
             double x1 = (-b - Math.sqrt(d)) / (2 * a);
             double x2 = (-b + Math.sqrt(d)) / (2 * a);
-            return twoRoots(x1, x2);
+            result.setX1(x1);
+            result.setX2(x2);
         }
-
+        return result;
     }
 }
-

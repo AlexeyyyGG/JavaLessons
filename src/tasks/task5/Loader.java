@@ -13,13 +13,12 @@ public class Loader {
             double b = scanner.nextDouble();
             System.out.println("Введите коэффициент c: ");
             double c = scanner.nextDouble();
-            System.out.println(equation.calculation(a, b, c));
-            System.out.println("Хотите выйти?: ");
-            if (scanner.nextLine().equalsIgnoreCase("Y")) {
-                break;
-            }
+
+            Result result = equation.calculation(a, b, c);
+            System.out.println(result.getX1() + " " + result.getX2());
+            System.out.println("Хотите выйти?: (Y/N) ");
+            scanner.nextLine();
 
         } while (!scanner.nextLine().equalsIgnoreCase("Y"));
-
     }
 }
