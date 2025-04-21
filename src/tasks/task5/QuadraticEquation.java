@@ -2,7 +2,7 @@ package tasks.task5;
 
 public class QuadraticEquation {
     /**
-     * Вычисление дискриминанта , расчёт корней квадратного уравнения.
+     * Расчёт корней квадратного уравнения.
      *
      * @param a Старший коэффициент
      * @param b Средний коэффициент
@@ -24,4 +24,10 @@ public class QuadraticEquation {
             return new Result(x1, x2);
         }
     }
+
+    public void printResult(Result result) {
+        System.out.println(result);
+    }
 }
+
+
