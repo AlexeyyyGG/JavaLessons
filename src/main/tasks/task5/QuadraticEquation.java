@@ -24,10 +24,6 @@ public class QuadraticEquation {
             return new Result(x1, x2);
         }
     }
-
-    public void printResult(Result result) {
-        System.out.println(result);
-    }
 }
 
 

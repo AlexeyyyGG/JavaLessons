@@ -15,7 +15,7 @@ public class Loader {
             double c = scanner.nextDouble();
 
             Result result = equation.calculation(a, b, c);
-            equation.printResult(result);
+            System.out.println(result);
             System.out.println("Хотите выйти?: (Y/N) ");
             scanner.nextLine();
 

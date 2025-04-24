@@ -1,9 +1,12 @@
 package tasks.task5;
 
 /**
- * Значения корей квадратного уравнения.
+ * Значения корней квадратного уравнения.
  */
 public class Result {
+    private static final String NO_ROOTS = "Нет корней";
+    private static final String ONE_ROOT = "Один корень х1 = %f";
+    private static final String TWO_ROOTS = "Два корня x1 = %f x2 = %f";
     /**
      * Первый корень квадратного уравнения.
      */
@@ -28,12 +31,13 @@ public class Result {
 
     @Override
     public String toString() {
+
         if (getX1() == null && getX2() == null) {
-            return "Нет корней";
+            return NO_ROOTS;
         } else if (getX2() == null) {
-            return "Один корень x1: " + getX1();
+            return String.format(ONE_ROOT,getX1());
         } else
-            return "Два корня: х1:" + getX1() + " x2:" + getX2();
+            return String.format(TWO_ROOTS,getX1(),getX2());
     }
 }
 
