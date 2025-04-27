@@ -10,7 +10,6 @@ public class QuadraticEquation {
      * @return Значения корней уравнения
      */
     public Result calculation(double a, double b, double c) {
-
         double d = Math.pow(b, 2) - 4.0 * a * c;
 
         if (d < 0) {

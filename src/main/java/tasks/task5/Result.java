@@ -21,23 +21,15 @@ public class Result {
         this.x2 = x2;
     }
 
-    public Double getX1() {
-        return x1;
-    }
-
-    public Double getX2() {
-        return x2;
-    }
-
     @Override
     public String toString() {
-
-        if (getX1() == null && getX2() == null) {
+        if (this.x1 == null && this.x2 == null) {
             return NO_ROOTS;
-        } else if (getX2() == null) {
-            return String.format(ONE_ROOT,getX1());
-        } else
-            return String.format(TWO_ROOTS,getX1(),getX2());
+        } else if (this.x2 == null) {
+            return String.format(ONE_ROOT, this.x1);
+        } else {
+            return String.format(TWO_ROOTS, this.x1, this.x2);
+        }
     }
 }
 

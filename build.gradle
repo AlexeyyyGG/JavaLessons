@@ -1,9 +1,15 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'com.lessons'
 version '1.0'
+
+java {
+    sourceCompatibility = '21'
+    targetCompatibility = '21'
+}
 
 repositories {
     mavenCentral()
@@ -12,3 +18,5 @@ repositories {
 dependencies {
     testImplementation 'junit:junit:4.13.2'
 }
+
+mainClassName = 'tasks.task5.Loader'
