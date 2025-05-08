@@ -3,8 +3,8 @@ plugins {
     id 'application'
 }
 
-group 'com.lessons'
-version '1.0'
+group ='com.lessons'
+version = '1.0'
 
 java {
     sourceCompatibility = '21'
@@ -16,7 +16,13 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
 
-mainClassName = 'tasks.task5.Loader'
+test {
+    useJUnitPlatform()
+}
+application {
+    mainClass = 'tasks.task5.Loader'
+}

@@ -21,6 +21,14 @@ public class Result {
         this.x2 = x2;
     }
 
+    public Double getX1(){
+        return x1;
+    }
+
+    public Double getX2(){
+        return x2;
+    }
+
     @Override
     public String toString() {
         if (this.x1 == null && this.x2 == null) {
