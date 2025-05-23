@@ -5,16 +5,17 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class QuadraticEquationTest {
-    QuadraticEquation quadraticEquation = new QuadraticEquation();
+public class QuadraticEquationTest {
+    private final QuadraticEquation quadraticEquation = new QuadraticEquation();
 
     @ParameterizedTest
     @CsvSource(value = {
-            "1, 0, 1, null, null",
-            "2, 4, 2, -1.0, null",
-            "1, -3, 2, 1.0, 2.0"
+        "1, 0, 1, null, null, Нет корней",
+        "2, 4, 2, -1.0, null, Один корень х1 = -1.0",
+        "1, -3, 2, 1.0, 2.0, Два корня x1 = 1.0 x2 = 2.0"
     }, nullValues = "null")
-    void testRoots(Double a, Double b, Double c, Double expectedX1, Double expectedX2) {
+    public void testRoots(Double a, Double b, Double c, Double expectedX1, Double expectedX2,
+        String expextedToString) {
         Result result = quadraticEquation.calculation(a, b, c);
 
         if (expectedX1 == null) {
@@ -28,5 +29,7 @@ class QuadraticEquationTest {
         } else {
             assertEquals(expectedX2, result.getX2());
         }
+
+        assertEquals(expextedToString, result.toString());
     }
 }
